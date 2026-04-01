@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:get_it/get_it.dart';
 
-import '../plugin/plugin_registry.dart';
 import '../../features/home/home_screen.dart';
+import '../../features/tabs/tabs_screen.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -16,20 +16,28 @@ final router = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
-      path: '/feature/:id',
-      builder: (context, state) {
-        final featureId = state.pathParameters['id']!;
-        final registry = GetIt.I<PluginRegistry>();
-        final plugin = registry.getPlugin(featureId);
-        
-        if (plugin == null) {
-          return const Scaffold(
-            body: Center(child: Text('Feature not found')),
-          );
-        }
-        
-        return plugin.buildFeature(context);
-      },
+      path: '/tabs',
+      builder: (context, state) => const TabsScreen(),
+    ),
+    GoRoute(
+      path: '/settings',
+      builder: (context, state) => const SettingsScreen(),
     ),
   ],
 );
+
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('설정'),
+      ),
+      body: const Center(
+        child: Text('설정 화면이 여기에 표시됩니다.'),
+      ),
+    );
+  }
+}

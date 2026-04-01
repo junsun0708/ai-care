@@ -11,20 +11,27 @@ class SampleHealthPlugin implements AppPlugin {
   String get name => 'Health Check';
 
   @override
-  String get description => 'Basic health check for children';
+  String get description => '기본 건강 체크';
 
   @override
   String get icon => '🏥';
 
   @override
-  void registerDependencies(GetIt getIt) {
-    // Register dependencies for this feature
-  }
+  List<RequiredInfo> get requiredInfos => [];
+
+  @override
+  bool isConfigured(Map<String, String> config) => true;
+
+  @override
+  void registerDependencies(GetIt getIt) {}
 
   @override
   Widget buildFeature(BuildContext context) {
     return const _HealthCheckScreen();
   }
+
+  @override
+  Widget? buildSettingsWidget(BuildContext context, Map<String, String> config, Function(Map<String, String>) onSave) => null;
 }
 
 class _HealthCheckScreen extends StatelessWidget {
@@ -40,20 +47,11 @@ class _HealthCheckScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              '🏥',
-              style: TextStyle(fontSize: 64),
-            ),
+            Text('🏥', style: TextStyle(fontSize: 64)),
             SizedBox(height: 16),
-            Text(
-              'Health Check Feature',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+            Text('Health Check Feature', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             SizedBox(height: 8),
-            Text(
-              'Add your health check functionality here',
-              textAlign: TextAlign.center,
-            ),
+            Text('Add your health check functionality here', textAlign: TextAlign.center),
           ],
         ),
       ),
