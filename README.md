@@ -51,7 +51,43 @@ class MyPlugin implements AppPlugin {
 
 ## 설치된 플러그인
 
-### 1. 똑딱 대기 알림 (⏰ Waiting Reservation)
+### 1. 음성 AI (🎤 Voice AI)
+
+음성으로 자녀 건강 상태 입력 및 조언 제공
+
+**사용 방법:**
+1. 마이크 버튼을 눌러 음성 입력
+2. 음성을 텍스트로 변환하여 건강 정보 저장
+3. 저장된 정보를 바탕으로健康 조언 제공
+
+**참고:** speech_to_text, flutter_tts 패키지 사용
+
+---
+
+### 2. 복지 혜택 (💰 Welfare Benefits)
+
+정부 및地方的 복지 혜택 정보 조회
+
+**설정 방법:**
+1. 플러그인 설정에서 현재 거주지 선택
+
+**사용 방법:**
+1. 해당 지역에서 이용 가능한 복지 혜택 조회
+2. 신청 방법 및 필요 서류 확인
+
+---
+
+### 3. Health Check (🏥 Basic Health Check)
+
+기본 건강 상태 체크
+
+**사용 방법:**
+1. 건강 체크 화면에서 상태 입력
+2. 결과 확인
+
+---
+
+### 4. 똑딱 대기 알림 (⏰ Waiting Reservation)
 
 병원 대기 순번 모니터링 및 최적 출발 시간 알림
 
@@ -72,7 +108,7 @@ class MyPlugin implements AppPlugin {
 
 ---
 
-### 2. 알림장 요약 (📋 Notice Summary)
+### 5. 알림장 요약 (📋 Notice Summary)
 
 키즈노트/스쿨맘톡 공지사항에서 준비물, 행사, 제출서류 자동 추출
 
@@ -93,7 +129,7 @@ class MyPlugin implements AppPlugin {
 
 ---
 
-### 3. 등하원 알림 (🛡️ Safety Notification)
+### 6. 등하원 알림 (🛡️ Safety Notification)
 
 아이 위치 모니터링 - 지정된 장소 도착 시 자동 알림 / 지연 시 경고
 
